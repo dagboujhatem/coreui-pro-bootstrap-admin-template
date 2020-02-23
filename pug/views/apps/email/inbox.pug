@@ -1,0 +1,208 @@
+extends /default.pug
+
+block view
+  .animated.fadeIn
+    .email-app.mb-4
+      nav
+        a.btn.btn-danger.btn-block(href='page-inbox-compose.html') New Email
+        ul.nav
+          li.nav-item
+            a.nav-link(href='#')
+              i.fa.fa-inbox
+              |  Inbox 
+              span.badge.badge-danger 4
+          li.nav-item
+            a.nav-link(href='#')
+              i.fa.fa-star
+              |  Stared
+          li.nav-item
+            a.nav-link(href='#')
+              i.fa.fa-rocket
+              |  Sent
+          li.nav-item
+            a.nav-link(href='#')
+              i.fa.fa-trash-o
+              |  Trash
+          li.nav-item
+            a.nav-link(href='#')
+              i.fa.fa-bookmark
+              |  Important
+              span.badge.badge-info 5
+          li.nav-item
+            a.nav-link(href='#')
+              i.fa.fa-inbox
+              |  Inbox 
+              span.badge.badge-danger 4
+      main.inbox
+        .toolbar
+          .btn-group
+            button.btn.btn-light(type='button')
+              span.fa.fa-envelope
+            button.btn.btn-light(type='button')
+              span.fa.fa-star
+            button.btn.btn-light(type='button')
+              span.fa.fa-star-o
+            button.btn.btn-light(type='button')
+              span.fa.fa-bookmark-o
+          .btn-group
+            button.btn.btn-light(type='button')
+              span.fa.fa-mail-reply
+            button.btn.btn-light(type='button')
+              span.fa.fa-mail-reply-all
+            button.btn.btn-light(type='button')
+              span.fa.fa-mail-forward
+          button.btn.btn-light(type='button')
+            span.fa.fa-trash-o
+          .btn-group
+            button.btn.btn-light.dropdown-toggle(type='button', data-toggle='dropdown')
+              span.fa.fa-tags
+              span.caret
+            .dropdown-menu
+              a.dropdown-item(href='#')
+                | add label 
+                span.badge.badge-danger  Home
+              a.dropdown-item(href='#')
+                | add label 
+                span.badge.badge-info  Job
+              a.dropdown-item(href='#')
+                | add label 
+                span.badge.badge-success  Clients
+              a.dropdown-item(href='#')
+                | add label 
+                span.badge.badge-warning  News
+          .btn-group.float-right
+            button.btn.btn-light(type='button')
+              span.fa.fa-chevron-left
+            button.btn.btn-light(type='button')
+              span.fa.fa-chevron-right
+        ul.messages
+          li.message.unread
+            a(href='#')
+              .actions
+                span.action
+                  i.fa.fa-square-o
+                span.action
+                  i.fa.fa-star-o
+              .header
+                span.from Lukasz Holeczek
+                span.date
+                  span.fa.fa-paper-clip
+                  |  Today, 3:47 PM
+              .title
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              .description
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          li.message
+            a(href='#')
+              .actions
+                span.action
+                  i.fa.fa-square-o
+                span.action
+                  i.fa.fa-star-o
+              .header
+                span.from Lukasz Holeczek
+                span.date
+                  span.fa.fa-paper-clip
+                  |  Today, 3:47 PM
+              .title
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              .description
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          li.message
+            a(href='#')
+              .actions
+                span.action
+                  i.fa.fa-square-o
+                span.action
+                  i.fa.fa-star-o
+              .header
+                span.from Lukasz Holeczek
+                span.date Today, 3:47 PM
+              .title
+                | Lorem ipsum dolor sit amet.
+              .description
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          li.message.unread
+            a(href='#')
+              .actions
+                span.action
+                  i.fa.fa-square-o
+                span.action
+                  i.fa.fa-star-o
+              .header
+                span.from Lukasz Holeczek
+                span.date Today, 3:47 PM
+              .title
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              .description
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          li.message
+            a(href='#')
+              .actions
+                span.action
+                  i.fa.fa-square-o
+                span.action
+                  i.fa.fa-star-o
+              .header
+                span.from Lukasz Holeczek
+                span.date Today, 3:47 PM
+              .title
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              .description
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          li.message
+            a(href='#')
+              .actions
+                span.action
+                  i.fa.fa-square-o
+                span.action
+                  i.fa.fa-star-o
+              .header
+                span.from Lukasz Holeczek
+                span.date Today, 3:47 PM
+              .title
+                | Lorem ipsum dolor sit amet.
+              .description
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          li.message.unread
+            a(href='#')
+              .actions
+                span.action
+                  i.fa.fa-square-o
+                span.action
+                  i.fa.fa-star-o
+              .header
+                span.from Lukasz Holeczek
+                span.date Today, 3:47 PM
+              .title
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              .description
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          li.message
+            a(href='#')
+              .actions
+                span.action
+                  i.fa.fa-square-o
+                span.action
+                  i.fa.fa-star-o
+              .header
+                span.from Lukasz Holeczek
+                span.date Today, 3:47 PM
+              .title
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              .description
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          li.message
+            a(href='#')
+              .actions
+                span.action
+                  i.fa.fa-square-o
+                span.action
+                  i.fa.fa-star-o
+              .header
+                span.from Lukasz Holeczek
+                span.date Today, 3:47 PM
+              .title
+                | Lorem ipsum dolor sit amet.
+              .description
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.

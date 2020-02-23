@@ -1,0 +1,110 @@
+extends /default.pug
+
+block view
+  .card
+    .card-header
+      | Invoice 
+      strong #90-98792
+      a.btn.btn-sm.btn-info.float-right(href='#', onclick='javascript:window.print();')
+        i.fa.fa-print
+        |  Print
+      a.btn.btn-sm.btn-info.float-right(href='#')
+        i.fa.fa-save
+        |  Save
+    .card-body
+      .row.mb-4
+        .col-sm-4
+          h6.mb-3 From:
+          div
+            strong BootstrapMaster.com
+          div Konopnickiej 42
+          div 43-190 Mikolow, Poland
+          div Email: lukasz@bootstrapmaster.com
+          div Phone: +48 123 456 789
+        // /.col
+        .col-sm-4
+          h6.mb-3 To:
+          div
+            strong BootstrapMaster.com
+          div Konopnickiej 42
+          div 43-190 Mikolow, Poland
+          div Email: lukasz@bootstrapmaster.com
+          div Phone: +48 123 456 789
+        // /.col
+        .col-sm-4
+          h6.mb-3 Details:
+          div
+            | Invoice 
+            strong #90-98792
+          div March 30, 2013
+          div VAT: PL9877281777
+          div Account Name: BootstrapMaster.com
+          div
+            strong SWIFT code: 99 8888 7777 6666 5555
+        // /.col
+      // /.row
+      .table-responsive-sm
+        table.table.table-striped
+          thead
+            tr
+              th.center #
+              th Item
+              th Description
+              th.center Quantity
+              th.right Unit Cost
+              th.right Total
+          tbody
+            tr
+              td.center 1
+              td.left Origin License
+              td.left Extended License
+              td.center 1
+              td.right $999,00
+              td.right $999,00
+            tr
+              td.center 2
+              td.left Custom Services
+              td.left Instalation and Customization (cost per hour)
+              td.center 20
+              td.right $150,00
+              td.right $3.000,00
+            tr
+              td.center 3
+              td.left Hosting
+              td.left 1 year subcription
+              td.center 1
+              td.right $499,00
+              td.right $499,00
+            tr
+              td.center 4
+              td.left Platinum Support
+              td.left 1 year subcription 24/7
+              td.center 1
+              td.right $3.999,00
+              td.right $3.999,00
+      .row
+        .col-lg-4.col-sm-5
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        .col-lg-4.col-sm-5.ml-auto
+          table.table.table-clear
+            tbody
+              tr
+                td.left
+                  strong Subtotal
+                td.right $8.497,00
+              tr
+                td.left
+                  strong Discount (20%)
+                td.right $1,699,40
+              tr
+                td.left
+                  strong VAT (10%)
+                td.right $679,76
+              tr
+                td.left
+                  strong Total
+                td.right
+                  strong $7.477,36
+          a.btn.btn-success(href='#')
+            i.fa.fa-usd
+            |  Proceed to Payment

@@ -1,0 +1,411 @@
+// Import variables
+@import "../variables";
+
+.daterangepicker {
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  z-index: 3001;
+  display: none;
+  width: 278px;
+  max-width: none;
+  padding: 0;
+  margin-top: 7px;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1em;
+  color: inherit;
+  background-color: #fff;
+  border: 1px solid $gray-200;
+  @include border-radius($border-radius);
+  &::before,
+  &::after {
+    position: absolute;
+    display: inline-block;
+    content: "";
+    border-bottom-color: rgba(0, 0, 0, .2);
+  }
+  &::before {
+    top: -7px;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #ccc;
+    border-left: 7px solid transparent;
+  }
+  &::after {
+    top: -6px;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #fff;
+    border-left: 6px solid transparent;
+  }
+  &.opensleft {
+    &::before {
+      right: 9px;
+    }
+    &::after {
+      right: 10px;
+    }
+  }
+  &.openscenter {
+    &::before,
+    &::after {
+      right: 0;
+      left: 0;
+      width: 0;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  &.opensright {
+    &::before {
+      left: 9px;
+    }
+    &::after {
+      left: 10px;
+    }
+  }
+  &.drop-up {
+    margin-top: -7px;
+    &::before {
+      top: initial;
+      bottom: -7px;
+      border-top: 7px solid #ccc;
+      border-bottom: initial;
+    }
+    &::after {
+      top: initial;
+      bottom: -6px;
+      border-top: 6px solid #fff;
+      border-bottom: initial;
+    }
+  }
+  &.single {
+    .daterangepicker .ranges,
+    .drp-calendar {
+      float: none;
+    }
+    .drp-selected {
+      display: none;
+    }
+  }
+  &.show-calendar {
+    .drp-calendar,
+    .drp-buttons {
+      display: block;
+    }
+  }
+  &.auto-apply .drp-buttons {
+    display: none;
+  }
+  .drp-calendar {
+    display: none;
+    max-width: 270px;
+    &.left {
+      padding: 8px 0 8px 8px;
+    }
+    &.right {
+      padding: 8px;
+    }
+    &.single .calendar-table {
+      border: none;
+    }
+  }
+  .calendar-table {
+    .next span,
+    .prev span {
+      display: inline-block;
+      padding: 3px;
+      color: #fff;
+      border: solid black;
+      border-width: 0 2px 2px 0;
+      border-radius: 0;
+    }
+    .next span {
+      //-webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+    .prev span {
+      //-webkit-transform: rotate(135deg);
+      transform: rotate(135deg);
+    }
+    th,
+    td {
+      width: 32px;
+      min-width: 32px;
+      height: 24px;
+      font-size: 12px;
+      line-height: 24px;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      border: 1px solid transparent;
+      border-radius: 4px;
+    }
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    table {
+      width: 100%;
+      margin: 0;
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+  }
+  td.available:hover,
+  th.available:hover {
+    color: inherit;
+    background-color: $gray-100;
+    border-color: transparent;
+  }
+  td.week,
+  th.week {
+    font-size: 80%;
+    color: #ccc;
+  }
+  td {
+    &.off {
+      color: #999;
+      background-color: #fff;
+      border-color: transparent;
+      &.in-range,
+      &.start-date,
+      &.end-date {
+        color: #999;
+        background-color: #fff;
+        border-color: transparent;
+      }
+    }
+    &.in-range {
+      color: #000;
+      background-color: #ebf4f8;
+      border-color: transparent;
+      border-radius: 0;
+    }
+    &.start-date {
+      @include border-radius($border-radius 0 0 $border-radius);
+    }
+    &.end-date {
+      @include border-radius(0 $border-radius $border-radius 0);
+    }
+    &.start-date.end-date {
+      @include border-radius($border-radius);
+    }
+    &.active {
+      color: #fff;
+      background-color: theme-color("info");
+      border-color: transparent;
+      &:hover {
+        color: #fff;
+        background-color: theme-color("info");
+        border-color: transparent;
+      }
+    }
+  }
+  th.month {
+    width: auto;
+  }
+  td.disabled,
+  option.disabled {
+    color: #999;
+    text-decoration: line-through;
+    cursor: not-allowed;
+  }
+  select {
+    &.monthselect,
+    &.yearselect {
+      height: auto;
+      padding: 1px;
+      margin: 0;
+      font-size: 12px;
+      cursor: default;
+    }
+    &.monthselect {
+      width: 56%;
+      margin-right: 2%;
+    }
+    &.yearselect {
+      width: 40%;
+    }
+    &.hourselect,
+    &.minuteselect,
+    &.secondselect,
+    &.ampmselect {
+      width: 50px;
+      padding: 2px;
+      margin: 0 auto;
+      font-size: 12px;
+      background: $gray-100;
+      border: 1px solid $gray-100;
+      outline: 0;
+    }
+  }
+  .calendar-time {
+    position: relative;
+    margin: 4px auto 0 auto;
+    line-height: 30px;
+    text-align: center;
+    select.disabled {
+      color: #ccc;
+      cursor: not-allowed;
+    }
+  }
+  .drp-buttons {
+    display: none;
+    padding: 8px;
+    clear: both;
+    line-height: 12px;
+    text-align: right;
+    vertical-align: middle;
+    border-top: 1px solid $gray-200;
+  }
+  .drp-selected {
+    display: inline-block;
+    padding-right: 8px;
+    font-size: 12px;
+  }
+  .drp-buttons .btn {
+    padding: 4px 8px;
+    margin-left: 8px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  &.show-ranges .drp-calendar.left {
+    border-left: 1px solid $gray-200;
+  }
+  &.show-calendar .ranges {
+    margin-top: 8px;
+  }
+  .ranges {
+    float: none;
+    margin: 0;
+    text-align: left;
+    ul {
+      width: 100%;
+      padding: 0;
+      margin: 0 auto;
+      list-style: none;
+    }
+    li {
+      padding: 8px 12px;
+      font-size: 12px;
+      cursor: pointer;
+      &:hover {
+        background-color: $gray-100;
+      }
+      &.active {
+        color: #fff;
+        background-color: theme-color("primary");
+      }
+    }
+  }
+}
+
+/*  Larger Screen Styling */
+@media (min-width: 564px) {
+  .daterangepicker {
+    width: auto;
+    .ranges ul {
+      width: 140px;
+    }
+    &.single {
+      .ranges ul {
+        width: 100%;
+      }
+      .drp-calendar.left {
+        clear: none;
+      }
+      &.ltr {
+        .ranges,
+        .drp-calendar {
+          float: left;
+        }
+      }
+      &.rtl {
+        .ranges,
+        .drp-calendar {
+          float: right;
+        }
+      }
+    }
+    &.ltr {
+      direction: ltr;
+      text-align: left;
+      .drp-calendar {
+        &.left {
+          margin-right: 0;
+          clear: left;
+          .calendar-table {
+            padding-right: 8px;
+            border-right: none;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+        }
+        &.right {
+          margin-left: 0;
+          .calendar-table {
+            border-left: none;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+        }
+        //&.left .calendar-table {
+        //  padding-right: 8px;
+        //}
+      }
+      .ranges,
+      .drp-calendar {
+        float: left;
+      }
+    }
+    &.rtl {
+      direction: rtl;
+      text-align: right;
+      .drp-calendar {
+        &.left {
+          margin-left: 0;
+          clear: right;
+          .calendar-table {
+            padding-left: 12px;
+            border-left: none;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+        }
+        &.right {
+          margin-right: 0;
+          .calendar-table {
+            border-right: none;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+        }
+        //&.left .calendar-table {
+        //  padding-left: 12px;
+        //}
+      }
+      .ranges,
+      .drp-calendar {
+        float: right;
+        text-align: right;
+      }
+    }
+  }
+}
+
+@media (min-width: 730px) {
+  .daterangepicker {
+    .ranges {
+      width: auto;
+    }
+    &.ltr .ranges {
+      float: left;
+    }
+    &.rtl .ranges {
+      float: right;
+    }
+    .drp-calendar.left {
+      clear: none !important;
+    }
+  }
+}

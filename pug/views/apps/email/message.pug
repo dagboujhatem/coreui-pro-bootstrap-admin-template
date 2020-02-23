@@ -1,0 +1,116 @@
+extends /default.pug
+
+block view
+  .animated.fadeIn
+    .email-app.mb-4
+      nav
+        a.btn.btn-danger.btn-block(href='#') New Email
+        ul.nav
+          li.nav-item
+            a.nav-link(href='#')
+              i.fa.fa-inbox
+              |  Inbox 
+              span.badge.badge-danger 4
+          li.nav-item
+            a.nav-link(href='#')
+              i.fa.fa-star
+              |  Stared
+          li.nav-item
+            a.nav-link(href='#')
+              i.fa.fa-rocket
+              |  Sent
+          li.nav-item
+            a.nav-link(href='#')
+              i.fa.fa-trash-o
+              |  Trash
+          li.nav-item
+            a.nav-link(href='#')
+              i.fa.fa-bookmark
+              |  Important
+              span.badge.badge-info 5
+          li.nav-item
+            a.nav-link(href='#')
+              i.fa.fa-inbox
+              |  Inbox 
+              span.badge.badge-danger 4
+      main.message
+        .toolbar
+          .btn-group
+            button.btn.btn-light(type='button')
+              span.fa.fa-star
+            button.btn.btn-light(type='button')
+              span.fa.fa-star-o
+            button.btn.btn-light(type='button')
+              span.fa.fa-bookmark-o
+          .btn-group
+            button.btn.btn-light(type='button')
+              span.fa.fa-mail-reply
+            button.btn.btn-light(type='button')
+              span.fa.fa-mail-reply-all
+            button.btn.btn-light(type='button')
+              span.fa.fa-mail-forward
+          button.btn.btn-light(type='button')
+            span.fa.fa-trash-o
+          .btn-group
+            button.btn.btn-light.dropdown-toggle(type='button', data-toggle='dropdown')
+              span.fa.fa-tags
+              span.caret
+            .dropdown-menu
+              a.dropdown-item(href='#')
+                | add label 
+                span.badge.badge-danger  Home
+              a.dropdown-item(href='#')
+                | add label 
+                span.badge.badge-info  Job
+              a.dropdown-item(href='#')
+                | add label 
+                span.badge.badge-success  Clients
+              a.dropdown-item(href='#')
+                | add label 
+                span.badge.badge-warning  News
+        .details
+          .title
+            | Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.
+          .header
+            img.avatar(src='img/avatars/7.jpg')
+            .from
+              span Lukasz Holeczek
+              |             lukasz@bootstrapmaster.com
+            .date
+              | Today, 
+              b 3:47 PM
+          .content
+            p
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            blockquote
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          .attachments
+            .attachment
+              span.badge.badge-danger zip
+              b bootstrap.zip
+              i (2,5MB)
+              span.menu
+                a.fa.fa-search(href='#')
+                a.fa.fa-share(href='#')
+                a.fa.fa-cloud-download(href='#')
+            .attachment
+              span.badge.badge-info txt
+              b readme.txt
+              i (7KB)
+              span.menu
+                a.fa.fa-search(href='#')
+                a.fa.fa-share(href='#')
+                a.fa.fa-cloud-download(href='#')
+            .attachment
+              span.badge.badge-success xls
+              b spreadsheet.xls
+              i (984KB)
+              span.menu
+                a.fa.fa-search(href='#')
+                a.fa.fa-share(href='#')
+                a.fa.fa-cloud-download(href='#')
+          form(method='post', action='')
+            .form-group
+              textarea#message.form-control(name='body', rows='12', placeholder='Click here to reply')
+            .form-group
+              button.btn.btn-success(tabindex='3', type='submit') Send message

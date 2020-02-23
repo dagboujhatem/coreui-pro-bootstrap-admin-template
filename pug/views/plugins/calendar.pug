@@ -1,0 +1,24 @@
+extends /default.pug
+
+block styles
+  link(href='vendors/fullcalendar/css/fullcalendar.min.css', rel='stylesheet')
+
+block scripts
+  // Plugins and scripts required by this view
+  script(src='node_modules/moment/min/moment.min.js')
+  script(src='node_modules/fullcalendar/dist/fullcalendar.min.js')
+  script(src='node_modules/fullcalendar/dist/gcal.js')
+  script(src='js/calendar.js')
+
+block view
+  .animated.fadeIn
+    .card
+      .card-header
+        i.icon-calendar
+        |  FullCalendar
+        a.badge.badge-danger(href='https://coreui.io/pro/') CoreUI Pro Component
+        .card-header-actions
+          a.card-header-action(href='https://fullcalendar.io', target='_blank')
+            small.text-muted docs
+      .card-body
+        #calendar

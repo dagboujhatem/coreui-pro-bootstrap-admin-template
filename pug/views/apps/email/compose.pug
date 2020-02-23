@@ -1,0 +1,106 @@
+extends /default.pug
+
+block view
+  .animated.fadeIn
+    .email-app
+      nav
+        a.btn.btn-danger.btn-block(href='#') New Email
+        ul.nav
+          li.nav-item
+            a.nav-link(href='#')
+              i.fa.fa-inbox
+              |  Inbox 
+              span.badge.badge-danger 4
+          li.nav-item
+            a.nav-link(href='#')
+              i.fa.fa-star
+              |  Stared
+          li.nav-item
+            a.nav-link(href='#')
+              i.fa.fa-rocket
+              |  Sent
+          li.nav-item
+            a.nav-link(href='#')
+              i.fa.fa-trash-o
+              |  Trash
+          li.nav-item
+            a.nav-link(href='#')
+              i.fa.fa-bookmark
+              |  Important
+              span.badge.badge-info 5
+          li.nav-item
+            a.nav-link(href='#')
+              i.fa.fa-inbox
+              |  Inbox 
+              span.badge.badge-danger 4
+      main
+        p.text-center New Message
+        form
+          .form-row.mb-3
+            label.col-2.col-sm-1.col-form-label(for='to') To:
+            .col-10.col-sm-11
+              input#to.form-control(type='email', placeholder='Type email')
+          .form-row.mb-3
+            label.col-2.col-sm-1.col-form-label(for='cc') CC:
+            .col-10.col-sm-11
+              input#cc.form-control(type='email', placeholder='Type email')
+          .form-row.mb-3
+            label.col-2.col-sm-1.col-form-label(for='bcc') BCC:
+            .col-10.col-sm-11
+              input#bcc.form-control(type='email', placeholder='Type email')
+        .row
+          .col-sm-11.ml-auto
+            .toolbar(role='toolbar')
+              .btn-group
+                button.btn.btn-light(type='button')
+                  span.fa.fa-bold
+                button.btn.btn-light(type='button')
+                  span.fa.fa-italic
+                button.btn.btn-light(type='button')
+                  span.fa.fa-underline
+              .btn-group
+                button.btn.btn-light(type='button')
+                  span.fa.fa-align-left
+                button.btn.btn-light(type='button')
+                  span.fa.fa-align-right
+                button.btn.btn-light(type='button')
+                  span.fa.fa-align-center
+                button.btn.btn-light(type='button')
+                  span.fa.fa-align-justify
+              .btn-group
+                button.btn.btn-light(type='button')
+                  span.fa.fa-indent
+                button.btn.btn-light(type='button')
+                  span.fa.fa-outdent
+              .btn-group
+                button.btn.btn-light(type='button')
+                  span.fa.fa-list-ul
+                button.btn.btn-light(type='button')
+                  span.fa.fa-list-ol
+              button.btn.btn-light(type='button')
+                span.fa.fa-trash-o
+              button.btn.btn-light(type='button')
+                span.fa.fa-paperclip
+              .btn-group
+                button.btn.btn-light.dropdown-toggle(type='button', data-toggle='dropdown')
+                  span.fa.fa-tags
+                  span.caret
+                .dropdown-menu
+                  a.dropdown-item(href='#')
+                    | add label 
+                    span.badge.badge-danger  Home
+                  a.dropdown-item(href='#')
+                    | add label 
+                    span.badge.badge-info  Job
+                  a.dropdown-item(href='#')
+                    | add label 
+                    span.badge.badge-success  Clients
+                  a.dropdown-item(href='#')
+                    | add label 
+                    span.badge.badge-warning  News
+            .form-group.mt-4
+              textarea#message.form-control(name='body', rows='12', placeholder='Click here to reply')
+            .form-group
+              button.btn.btn-success(type='submit') Send
+              button.btn.btn-light(type='submit') Draft
+              button.btn.btn-danger(type='submit') Discard

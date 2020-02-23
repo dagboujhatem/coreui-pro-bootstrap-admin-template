@@ -1,0 +1,12 @@
+extends /default.pug
+
+block styles
+  link(href='node_modules/quill/dist/quill.snow.css', rel='stylesheet')
+
+block scripts
+  // Plugins and scripts required by this view
+  script(src='node_modules/quill/dist/quill.min.js')
+  script(src='js/text-editor.js')
+
+block view
+  include text-editor.html
